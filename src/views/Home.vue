@@ -59,23 +59,27 @@
       <button v-on:click="createPost()">Create Post</button>
     </div>
 
-    <h1>All Post</h1>
-    <div v-for="post in posts">
-      <h2>{{ post.title }}</h2>
-      <img v-bind:src="post.url" v-bind:alt="post.title" />
-      <button v-on:click="showPost(post)">Show more</button>
-      <div v-if="currentPost === post">
-        <p>Body: {{ post.body }}</p>
-        <p>Image: {{ post.image }}</p>
+        <h1>All Post</h1>
+    
+              <h2>{{ post.title }}</h2>
+              <img v-bind:src="post.url" v-bind:alt="post.title" />
+              <button v-on:click="showPost(post)">Show more</button>
+              <div v-if="currentPost === post">
+                <p>Body: {{ post.body }}</p>
+                <p>Image: {{ post.image }}</p>
+              </div>
+              Title:
+              <input type="text" v-model="post.title" />
+              Body:
+              <input type="text" v-model="post.body" />
+              Image:
+              <input type="text" v-model="post.image" />
+              <button v-on:click="updatePost(post)">Update Post</button>
+              <button v-on:click="destroyPost(post)">Destroy Post</button>
+            </a>
+          </div>
+        </div>
       </div>
-      Title:
-      <input type="text" v-model="post.title" />
-      Body:
-      <input type="text" v-model="post.body" />
-      Image:
-      <input type="text" v-model="post.image" />
-      <button v-on:click="updatePost(post)">Update Post</button>
-      <button v-on:click="destroyPost(post)">Destroy Post</button>
     </div>
   </div>
 </template>
